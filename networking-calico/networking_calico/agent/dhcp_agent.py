@@ -195,8 +195,8 @@ class MTUWatcher(object):
             # further link transitions.
             while not (running_event.ready() or exited_event.ready()):
                 # Create and delete a dummy interface.
-                os.system("ip link add calico-dhcp-dmy type dummy")
-                os.system("ip link del calico-dhcp-dmy type dummy")
+                os.system("sudo ip link add calico-dhcp-dmy type dummy")
+                os.system("sudo ip link del calico-dhcp-dmy type dummy")
                 time.sleep(0.5)
 
             if not exited_event.ready():
